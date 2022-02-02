@@ -1,0 +1,58 @@
+MilyhA@MOV-W7 MINGW64 /c/projects/PycharmProjects
+$ python -V
+Python 3.8.10
+
+MilyhA@MOV-W7 MINGW64 /c/projects/PycharmProjects
+$ pip -V
+pip 22.0.2 from C:\Python\Python3_8_10\lib\site-packages\pip (python 3.8)
+
+MilyhA@MOV-W7 MINGW64 /c/projects/PycharmProjects
+$ pip show pillow
+Name: Pillow
+Version: 8.4.0
+Summary: Python Imaging Library (Fork)
+Home-page: https://python-pillow.org
+Author: Alex Clark (PIL Fork Author)
+Author-email: aclark@python-pillow.org
+License: HPND
+Location: c:\python\python3_8_10\lib\site-packages
+Requires:
+Required-by:
+
+MilyhA@MOV-W7 MINGW64 /c/projects/PycharmProjects
+$ pip freeze
+distlib==0.3.4
+filelock==3.4.2
+Pillow==8.4.0
+platformdirs==2.4.1
+six==1.16.0
+virtualenv==20.13.0
+virtualenvwrapper-win==1.2.7
+
+MilyhA@MOV-W7 MINGW64 /c/projects/PycharmProjects
+$ python -m venv test_virt
+
+MilyhA@MOV-W7 MINGW64 /c/projects/PycharmProjects
+$ source test_virt/Scripts/activate
+(test_virt)
+MilyhA@MOV-W7 MINGW64 /c/projects/PycharmProjects
+$ pip show pillow
+WARNING: Package(s) not found: pillow
+(test_virt)
+MilyhA@MOV-W7 MINGW64 /c/projects/PycharmProjects
+$ pip install pillow==7.1.1
+Collecting pillow==7.1.1
+  Using cached Pillow-7.1.1-cp38-cp38-win_amd64.whl (2.0 MB)
+Installing collected packages: pillow
+Successfully installed pillow-7.1.1
+WARNING: You are using pip version 21.1.1; however, version 22.0.2 is available.
+You should consider upgrading via the 'c:\projects\pycharmprojects\test_virt\scripts\python.exe -m pip install --upgrade pip' command.
+(test_virt)
+MilyhA@MOV-W7 MINGW64 /c/projects/PycharmProjects
+$ pip freeze
+Pillow==7.1.1
+(test_virt)
+MilyhA@MOV-W7 MINGW64 /c/projects/PycharmProjects
+$ deactivate
+MilyhA@MOV-W7 MINGW64 /c/projects/PycharmProjects
+$ 
