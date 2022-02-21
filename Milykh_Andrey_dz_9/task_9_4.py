@@ -30,11 +30,12 @@
 
 
 class Car:
-    is_police: bool = False
+    # is_police: bool = False
 
-    def __init__(self, speed: int, color: str, name: str):
+    def __init__(self, speed: int, color: str, name: str, is_police=False):
         """
         Конструктор класса
+        :param is_police: полицейский автомобиль
         :param speed: текущая скорость автомобиля
         :param color: цвет автомобиля
         :param name: название марки автомобиля
@@ -43,6 +44,8 @@ class Car:
         self.__speed = speed
         self.__color = color
         self.__name = name
+        self.__is_police = is_police
+
 
     def go(self) -> None:
         """
@@ -79,7 +82,7 @@ class Car:
             else:
                 raise ValueError('ValueError')
         except ValueError as error:
-            print(f"{error}: нераспознанное направление двежения")
+            print(f"{error}: нераспознанное направление движения")
 
     def show_speed(self) -> None:
         """
@@ -88,20 +91,20 @@ class Car:
             '<название марки машины>: текущая скорость <значение текущей скорости> км/час'
         """
         print(f'"{self.__name}": текущая скорость {self.__speed} км/час')
-        if Car.is_police:
+        if self.__is_police:
             print("Вруби мигалку и забудь про скорость!")
         # pass  # Ваш код здесь
 
     def get_info(self) -> tuple:
-        return self.__speed, self.__color, self.__name
+        return self.__speed, self.__color, self.__name, self.__is_police
 
 # определите классы TownCar, WorkCar, SportCar, PoliceCar согласно условия задания
 
 
 class TownCar(Car):
 
-    def __init__(self, speed: int, color: str, name: str):
-        super().__init__(speed, color, name)
+    def __init__(self, speed: int, color: str, name: str, is_police=False):
+        super().__init__(speed, color, name, is_police)
 
     def show_speed(self) -> None:
         """
@@ -118,14 +121,14 @@ class TownCar(Car):
 
 class SportCar(Car):
 
-    def __init__(self, speed: int, color: str, name: str):
-        super().__init__(speed, color, name)
+    def __init__(self, speed: int, color: str, name: str, is_police=False):
+        super().__init__(speed, color, name, is_police)
 
 
 class WorkCar(Car):
 
-    def __init__(self, speed: int, color: str, name: str):
-        super().__init__(speed, color, name)
+    def __init__(self, speed: int, color: str, name: str, is_police=False):
+        super().__init__(speed, color, name, is_police)
 
     def show_speed(self) -> None:
         """
@@ -144,8 +147,8 @@ class WorkCar(Car):
 class PoliceCar(Car):
     Car.is_police = True
 
-    def __init__(self, speed: int, color: str, name: str):
-        super().__init__(speed, color, name)
+    def __init__(self, speed: int, color: str, name: str, is_police=True):
+        super().__init__(speed, color, name, is_police)
 
 
 if __name__ == '__main__':
